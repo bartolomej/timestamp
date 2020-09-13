@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UNIX Timestamp</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap');
+		* {
+			margin: 0;
+			font-family: 'Roboto', sans-serif;
+		}
+		body {
+			background: black;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		a {
+			color: lightgrey;
+		}
+		h1 {
+			color: lightgrey;
+			display: block;
+		}	
+		strong {
+			font-size: 200px;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h1>Current <a target="_blank" href="https://en.wikipedia.org/wiki/Unix_time">unix timestamp</a>:</h1>
+		<strong></strong>
+	</div>
+</body>
+<script>
+	window.addEventListener('load', onLoad);
+
+	function onLoad() {
+		const domElement = document.querySelector('strong');
+		requestAnimationFrame(animate);
+		function animate() {
+			domElement.innerText = Date.now();
+			requestAnimationFrame(animate);
+		}
+	}
+</script>
+</html>
